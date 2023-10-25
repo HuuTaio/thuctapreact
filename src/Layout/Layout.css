@@ -1,0 +1,75 @@
+.Admin-container {
+    background-color: #f9f9fc;
+    overflow: hidden;
+  }
+  .Header_Admin {
+    float: left;
+    width: 18%;
+    z-index: 2;
+  }
+  
+  .Site_Admin_Right {
+    width: 82%;
+    float: right;
+    max-height: 100vh;
+    overflow: auto;
+  }
+  
+  .TopBar_Admin {
+    position: fixed;
+    width: 82%;
+    z-index: 1;
+  }
+  
+  .Noidungchinh_Admin {
+    padding: 60px 0px;
+  }
+  
+  @media (max-width: 1300px) {
+    .Site_Admin_Right {
+      width: 70%;
+      overflow: auto;
+  
+    }
+    .TopBar_Admin {
+      position: fixed;
+      width: 70%;
+    }
+    .Header_Admin {
+      width: 30%;
+      position: fixed;
+    }
+    .Noidungchinh_Admin {
+      padding: 60px 0px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .Site_Admin_Right {
+      width: 100%;
+      overflow: auto;
+    }
+    .TopBar_Admin {
+      position: fixed;
+      width: 100%;
+    }
+    .Header_Admin {
+      position: fixed;
+      width: 50%;
+    }
+    .Noidungchinh_Admin {
+      padding: 60px 0px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .Site_Admin_Right {
+      width: 100%;
+      overflow: auto;
+    }
+    .Header_Admin {
+      position: fixed;
+      width: 70%;
+    }
+  }
+  
