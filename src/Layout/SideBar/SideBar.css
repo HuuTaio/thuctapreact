@@ -39,9 +39,16 @@
         user-select: none;
         clear: both;
         position: relative;
-        margin: 10px 15px;
+        margin: 5px 15px;
     }
-
+    .menu-container-admin .main_Menu .single_Menu_1{
+        background-color: #ededed;
+        margin-top: -8px;
+    }
+    .menu-container-admin .main_Menu .single_Menu_child{
+        background-color: #ededed;
+        border-radius: 5px;
+    }
     .menu-container-admin .main_Menu .single_Menu .icon-menu {
         float: left;
         font-size: 20px;
@@ -54,7 +61,11 @@
     .menu-container-admin .main_Menu .single_Menu .icon-menu .custom-svg {
         fill: #667085;
     }
-
+    .menu-container-admin .main_Menu .single_Menu .single_Menu_1 .icon-menu .custom-svg {
+        fill: #667085;
+        margin-top: 13px;
+        padding: 0px 0px 0px 10px;
+    }
     .menu-container-admin .main_Menu .single_Menu .faChevronIcon {
         float: right;
         position: relative;
@@ -89,21 +100,33 @@
         cursor: pointer;
         border-radius: 5px;
     }
+    .menu-container-admin .main_Menu .single_Menu .link_SideBar{
+        text-decoration: none;
+    }
+    .menu-container-admin .main_Menu .title{
+        font-size: 12px;
+        font-weight: 600;
+        color: #667085;
+        padding: 0px 20px;
+    }
 
     .menu-container-admin .main_Menu .active h2,
     .menu-container-admin .main_Menu .active h1 {
-        background-color: #5C59E8;
+        background-color: #5D87FF;
         color: #fff;
     }
 
     .menu-container-admin .main_Menu .active .icon-menu .custom-svg {
         fill: #fff;
     }
+    .menu-container-admin .main_Menu .single_Menu_1 .active .icon-menu .custom-svg {
+        fill: #fff;
+    }
 
     .menu-container-admin .main_Menu .dropdow_Focus .icon-menu .custom-svg {
         fill: #5C59E8;
     }
-
+    .menu-container-admin .main_Menu .single_Menu .link_SideBar:hover .icon-menu .custom-svg ,
     .menu-container-admin .main_Menu .single_Menu h1:hover .icon-menu .custom-svg {
 
         fill: rgb(255, 255, 255);
@@ -115,14 +138,14 @@
         border: 1px solid #fff;
     }
 
-    .menu-container-admin .main_Menu .single_Menu .single_Menu_1 {
-        background-color: #e8e8e8;
+    .menu-container-admin .main_Menu .single_Menu .mini_Menu {
+        background-color: #ededed;
         border-radius: 5px;
     }
 
     .menu-container-admin .main_Menu .single_Menu h1:hover,
     .menu-container-admin .main_Menu .single_Menu h2:hover {
-        background: #5C59E8;
+        background: #5D87FF;
         color: #fff;
         font-weight: 600;
         transition: 0.2s;
@@ -130,9 +153,8 @@
     }
 
     .menu-container-admin .main_Menu .dropdow_Focus h1 {
-        border-bottom: 2px solid #fff;
-        background: var(--primary-primary-50, #EFEFFD);
-        color: var(--primary-primary-500, #5C59E8);
+        background: var(--primary-primary-50, #F6F9FF);
+        color: var(--primary-primary-500, #5D87FF);
     }
 
     .nutanhien_menu {
@@ -145,7 +167,7 @@
         border: none;
         width: 40px;
         text-align: center;
-        background-color: #5C59E8;
+        background-color: #5D87FF;
         color: #fff;
         border-radius: 5px;
         margin: 10px;
@@ -159,7 +181,7 @@
     }
 
     .bottom_siderbar_admin .dangXuat_Admin button {
-        background-color: #5C59E8;
+        background-color: #5D87FF;
         display: flex;
         width: 228px;
         padding: 10px 14px;
@@ -172,6 +194,7 @@
         transform: translateX(-50%);
         left: 50%;
         margin-top: 10px;
+        border: none;
     }
 
     @media (max-width: 768px) {
