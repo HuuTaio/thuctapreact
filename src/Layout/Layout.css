@@ -1,6 +1,7 @@
 .Admin-container {
-    background-color: #f9f9fc;
+    background-color: #F2FDFF;
     overflow: hidden;
+    min-height: 100vh;
   }
   .Header_Admin {
     float: left;

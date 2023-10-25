@@ -1,3 +1,19 @@
+- Lệnh git cơ bản:
+
+//Cập nhật code mới nhất
+git branch phamdat
+git checkout phamdat
+// Trỏ đến nhánh phamdat
+git pull origin phamdat: lấy source code về;
+
+//Cập nhật code mới nhất
+
+//Trước khi đẩy code lên
+git add .
+git commit -m "Làm gì thi ghi đó"
+git push origin phamdat: đẩy code lên;
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
