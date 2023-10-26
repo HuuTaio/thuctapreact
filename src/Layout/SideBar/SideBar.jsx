@@ -55,7 +55,7 @@ const SideBar = () => {
                 </div>
                 {isAnHienSubMenu && (
                     <div className="menu-container-admin">
-                        <img src={"https://i.imgur.com/AB2qbqm.png"} alt="" />
+                        <img src={"https://leaptodigital.com/wp-content/uploads/2020/04/modernize-logo-png.png"} alt="" />
                         <div className="main_Menu">
                                
                                 <div className="scroll_bar">

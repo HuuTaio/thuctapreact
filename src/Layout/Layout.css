@@ -1,5 +1,8 @@
 .Admin-container {
-    background-color: #F2FDFF;
+    background-color: #e6e6e6;
+    /* background-image: url("https://wallpapers.com/images/hd/purple-light-in-galaxy-background-l39vbu2x2yed4jw6.jpg");
+    background-size: 100%;
+    background-attachment: fixed; */
     overflow: hidden;
     min-height: 100vh;
   }
@@ -23,7 +26,7 @@
   }
   
   .Noidungchinh_Admin {
-    padding: 60px 0px;
+    padding: 80px 10px;
   }
   
   @media (max-width: 1300px) {
@@ -41,7 +44,7 @@
       position: fixed;
     }
     .Noidungchinh_Admin {
-      padding: 60px 0px;
+      padding: 80px 10px;
     }
   }
   
@@ -59,7 +62,7 @@
       width: 50%;
     }
     .Noidungchinh_Admin {
-      padding: 60px 0px;
+      padding: 80px 10px;
     }
   }
   

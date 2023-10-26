@@ -1,0 +1,43 @@
+.Home .statistical{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   gap: 10px;
+}
+
+.Home .statistical .box_statistical{
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+.Home .statistical .box_statistical .icon_statistical{
+    float: left;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+/* .Home .statistical .box_statistical .icon_statistical svg{
+    
+} */
+.Home .statistical .box_statistical p{
+    margin: 0px;
+    padding: 5px;
+    color: #5C5C5C;
+    font-weight: 600;
+}
+.Home .statistical .box_statistical h2{
+    font-size: 30px;
+    margin: 0;
+}
+.Home .statistical .box_statistical .icon_approved{
+    background-color: #00B712;
+}
+.Home .statistical .box_statistical .icon_waiting{
+    background-color: #FF2E00;
+}
+.Home .statistical .box_statistical .icon_exported{
+    background-color: #00B7AC;
+}
+
+.Home .table_history{
+    margin-top: 20px;
+}
