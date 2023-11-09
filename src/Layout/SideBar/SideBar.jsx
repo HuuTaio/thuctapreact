@@ -187,7 +187,7 @@ const SideBar = () => {
                                         <div className="single_Menu_1">
                                             <div className="mini_Menu">
                                                 <NavLink
-                                                    to="/danhsachuser"
+                                                    to="/list-blog"
                                                     activeclassname="active"
                                                     className="link_SideBar"
                                                 >
