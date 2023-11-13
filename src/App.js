@@ -9,6 +9,8 @@ import File from "./Pages/File/File";
 import Home from "./Pages/Home/Home";
 import Hoso from "./Pages/Hoso/Hoso";
 import Listuser from "./Pages/Listuser/Listuser";
+import Adduser from "./Pages/Adduser/Adduser";
+import Edituser from "./Pages/Edituser/Edituser";
 function App() {
     return (
         <>
@@ -17,7 +19,9 @@ function App() {
                     <Route path="/" element={<Layout />}>
                         <Route index element={<Home />} />
                         <Route path="/hoso" element={<Hoso />} />
-                        <Route path="/danhsachuser" element={<Listuser />} />
+                        <Route path="/listuser" element={<Listuser />} />
+                        <Route path="/adduser" element={<Adduser />} />
+                        <Route path="/edituser" element={<Edituser />} />
                         <Route path="*" element={<NoPage />} />
                         <Route path="/file" element={<File />} />
                     </Route>

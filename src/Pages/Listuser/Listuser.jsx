@@ -21,20 +21,23 @@ import Switch from "@mui/material/Switch";
 import DeleteIcon from "@mui/icons-material/Delete";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { visuallyHidden } from "@mui/utils";
+import { NavLink } from "react-router-dom";
 
 function createData(
     id,
-    namehoso,
-    namnguoidung,
-    loaichinhsua,
+    tennguoidung,
+    anh,
+    loaitaikhoan,
+    matkhau,
     thoigian,
     thaotac
 ) {
     return {
         id,
-        namehoso,
-        namnguoidung,
-        loaichinhsua,
+        tennguoidung,
+        anh,
+        loaitaikhoan,
+        matkhau,
         thoigian,
         thaotac,
     };
@@ -43,82 +46,78 @@ function createData(
 const rows = [
     createData(
         1,
-        "Hồ sơ tập huấn",
-        "Nguyễn Duy Công",
-        "Xét duyệt",
+        "Buihuutai123",
+        "Hình ảnh",
+        "Nhân viên",
+        "12345",
         "12/07/2023"
     ),
     createData(
         2,
-        "Hồ sơ tập huấn",
-        "Nguyễn Duy Công",
-        "Xét duyệt",
+        "Buihuutai123",
+        "Hình ảnh",
+        "Nhân viên",
+        "12345",
         "12/07/2023"
     ),
     createData(
         3,
-        "Hồ sơ tập huấn",
-        "Nguyễn Duy Công",
+        "Buihuutai123",
+        "Hình ảnh",
         "Xét duyệt",
+        "12345",
         "12/07/2023"
     ),
     createData(
         4,
-        "Hồ sơ tập huấn",
-        "Nguyễn Duy Công",
+        "Buihuutai123",
+        "Hình ảnh",
         "Xét duyệt",
+        "12345",
         "12/07/2023"
     ),
     createData(
         5,
-        "Hồ sơ tập huấn",
-        "Nguyễn Duy Công",
+        "Buihuutai123",
+        "Hình ảnh",
         "Xét duyệt",
+        "12345",
         "12/07/2023"
     ),
-    createData(
-        6,
-        "Hồ sơ tập huấn",
-        "Nguyễn Duy Công",
-        "Xét duyệt",
-        "12/07/2023"
-    ),
-    createData(
-        7,
-        "Hồ sơ tập huấn",
-        "Nguyễn Duy Công",
-        "Xét duyệt",
-        "12/07/2023"
-    ),
+    createData(6, "Buihuutai123", "Hình ảnh", "Quản lí", "12345", "12/07/2023"),
+    createData(7, "Buihuutai123", "Hình ảnh", "Quản lí", "12345", "12/07/2023"),
     createData(
         8,
-        "Hồ sơ tập huấn",
-        "Nguyễn Duy Công",
-        "Xét duyệt",
+        "Buihuutai123",
+        "Hình ảnh",
+        "Nhân viên",
+        "12345",
         "12/07/2023",
         2.0
     ),
     createData(
         9,
-        "Hồ sơ tập huấn",
-        "Nguyễn Duy Công",
-        "Xét duyệt",
+        "Buihuutai123",
+        "Hình ảnh",
+        "Nhân viên",
+        "12345",
         "12/07/2023",
         2.0
     ),
     createData(
         10,
-        "Hồ sơ tập huấn",
-        "Nguyễn Duy Công",
-        "Xét duyệt",
-        "12/07/2023",
-        2.0
+        "Buihuutai123",
+        "Hình ảnh",
+        "Nhân viên",
+        "12345",
+        "12/07/2023"
     ),
     createData(
         11,
-        "Hồ sơ tập huấn",
-        "Nguyễn Duy Công",
-        "Xét duyệt",
+        "Buihuutai123",
+        "Hình ảnh",
+        "Nhân viên",
+        "12345",
         "12/07/2023",
         2.0
     ),
@@ -164,22 +163,28 @@ const headCells = [
         label: "ID",
     },
     {
-        id: "namehoso",
+        id: "tennguoidung",
         numeric: false,
         disablePadding: true,
-        label: "Tên hồ sơ",
-    },
-    {
-        id: "namnguoidung",
-        numeric: true,
-        disablePadding: false,
         label: "Tên người dùng",
     },
     {
-        id: "loaichinhsua",
+        id: "anh",
         numeric: true,
         disablePadding: false,
-        label: "Loại chỉnh sửa",
+        label: "Ảnh",
+    },
+    {
+        id: "loaitaikhoan",
+        numeric: true,
+        disablePadding: false,
+        label: "Loại tài khoản",
+    },
+    {
+        id: "matkhau",
+        numeric: true,
+        disablePadding: false,
+        label: "Mật khẩu ",
     },
     {
         id: "thoigian",
@@ -279,6 +284,26 @@ function EnhancedTableToolbar(props) {
             }}
         >
             {numSelected > 0 ? (
+                <Typography
+                    sx={{ flex: "1 1 100%" }}
+                    color="inherit"
+                    variant="subtitle1"
+                    component="div"
+                >
+                    {numSelected} selected
+                </Typography>
+            ) : (
+                <Typography
+                    sx={{ flex: "1 1 100%" }}
+                    variant="h6"
+                    id="tableTitle"
+                    component="div"
+                >
+                    Danh sách user
+                </Typography>
+            )}
+
+            {numSelected > 0 ? (
                 <Tooltip title="Delete">
                     <IconButton>
                         <DeleteIcon />
@@ -370,7 +395,7 @@ const Hoso = () => {
     return (
         <div>
             <div className="Hoso">
-                <div className="text-4xl font-medium">Hồ sơ</div>.{" "}
+                <div className="text-4xl font-medium">Danh sách user</div>.{" "}
                 <ul className="flex justify-start alignItem-center gap-14 font-medium cursor-pointer">
                     <li>
                         <a>Danh sách người dùng (68)</a>
@@ -419,15 +444,21 @@ const Hoso = () => {
                             Thoát
                             <i class="fas fa-file-export"></i>
                         </button>
-                        <button
-                            style={{
-                                backgroundColor: "#5D87FF",
-                                color: "#ffff",
-                            }}
-                            className="btn "
+                        <NavLink
+                            to="/adduser"
+                            activeclassname="active"
+                            className="link_SideBar"
                         >
-                            + Add user
-                        </button>
+                            <button
+                                style={{
+                                    backgroundColor: "#5D87FF",
+                                    color: "#ffff",
+                                }}
+                                className="btn "
+                            >
+                                + Add user
+                            </button>
+                        </NavLink>
                     </div>
                 </div>
                 <div className="table_history">
@@ -496,22 +527,34 @@ const Hoso = () => {
                                                         {row.id}
                                                     </TableCell>
                                                     <TableCell align="center">
-                                                        {row.namehoso}
+                                                        {row.tennguoidung}
                                                     </TableCell>
                                                     <TableCell align="center">
-                                                        {row.namnguoidung}
+                                                        {row.anh}
                                                     </TableCell>
                                                     <TableCell align="center">
-                                                        {row.loaichinhsua}
+                                                        {row.loaitaikhoan}
+                                                    </TableCell>
+                                                    <TableCell align="center">
+                                                        {row.matkhau}
                                                     </TableCell>
                                                     <TableCell align="center">
                                                         {row.thoigian}
                                                     </TableCell>
                                                     <TableCell align="center">
                                                         <div className="flex gap-3 justify-center items-center">
-                                                            <i className="fa-regular fa-pen-to-square text-blue-500 text-xl">
-                                                                {row.thaotac}
-                                                            </i>
+                                                            <NavLink
+                                                                to="/edituser"
+                                                                activeclassname="active"
+                                                                className="link_SideBar"
+                                                            >
+                                                                <i className="fa-regular fa-pen-to-square text-blue-500 text-xl">
+                                                                    {
+                                                                        row.thaotac
+                                                                    }
+                                                                </i>
+                                                            </NavLink>
+
                                                             <div className="w-0.5 h-5 bg-gray-300"></div>
                                                             <i className="fa-regular fa-trash-can text-red-500 text-xl">
                                                                 {row.thaotac}
