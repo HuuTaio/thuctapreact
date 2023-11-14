@@ -1,0 +1,174 @@
+{
+  "profiles": [
+    {
+      "id": 1,
+      "name": "Profile 1",
+      "data_table": [
+        {
+          "id": 1,
+          "name": "Cupcake",
+          "calories": 305,
+          "fat": 3.7,
+          "carbs": 67,
+          "protein": 4.3,
+          "newColumn1": "Value1A",
+          "newColumn2": "Value1B"
+        },
+        {
+          "id": 2,
+          "name": "Donut",
+          "calories": 452,
+          "fat": 25,
+          "carbs": 51,
+          "protein": 4.9,
+          "newColumn1": "Value2A",
+          "newColumn2": "Value2B"
+        },
+        {
+          "id": 3,
+          "name": "Donut",
+          "calories": 452,
+          "fat": 25,
+          "carbs": 51,
+          "protein": 4.9,
+          "newColumn1": "Value2A",
+          "newColumn2": "Value2B"
+        },
+        {
+          "id": 4,
+          "name": "Donut",
+          "calories": 452,
+          "fat": 25,
+          "carbs": 51,
+          "protein": 4.9,
+          "newColumn1": "Value2A",
+          "newColumn2": "Value2B"
+        },
+        {
+          "id": 5,
+          "name": "Donut",
+          "calories": 452,
+          "fat": 25,
+          "carbs": 51,
+          "protein": 4.9,
+          "newColumn1": "Value2A",
+          "newColumn2": "Value2B"
+        },
+        {
+          "id": 6,
+          "name": "Donut",
+          "calories": 452,
+          "fat": 25,
+          "carbs": 51,
+          "protein": 4.9,
+          "newColumn1": "Value2A",
+          "newColumn2": "Value2B"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Profile 2",
+      "data_table": [
+        {
+          "id": 1,
+          "name": "Some Dessert",
+          "calories": 300,
+          "fat": 5,
+          "carbs": 60,
+          "protein": 4,
+          "newColumn1": "Value1X",
+          "newColumn2": "Value1Y"
+        },
+        {
+          "id": 2,
+          "name": "Another Dessert",
+          "calories": 400,
+          "fat": 7,
+          "carbs": 70,
+          "protein": 5,
+          "newColumn1": "Value2X",
+          "newColumn2": "Value2Y"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Profile 2",
+      "data_table": [
+        {
+          "id": 1,
+          "name": "Some Dessert",
+          "calories": 300,
+          "fat": 5,
+          "carbs": 60,
+          "protein": 4,
+          "newColumn1": "Value1X",
+          "newColumn2": "Value1Y"
+        },
+        {
+          "id": 2,
+          "name": "Another Dessert",
+          "calories": 400,
+          "fat": 7,
+          "carbs": 70,
+          "protein": 5,
+          "newColumn1": "Value2X",
+          "newColumn2": "Value2Y"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Profile 2",
+      "data_table": [
+        {
+          "id": 1,
+          "name": "Some Dessert",
+          "calories": 300,
+          "fat": 5,
+          "carbs": 60,
+          "protein": 4,
+          "newColumn1": "Value1X",
+          "newColumn2": "Value1Y"
+        },
+        {
+          "id": 2,
+          "name": "Another Dessert",
+          "calories": 400,
+          "fat": 7,
+          "carbs": 70,
+          "protein": 5,
+          "newColumn1": "Value2X",
+          "newColumn2": "Value2Y"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Profile 2",
+      "data_table": [
+        {
+          "id": 1,
+          "name": "Some Dessert",
+          "calories": 300,
+          "fat": 5,
+          "carbs": 60,
+          "protein": 4,
+          "newColumn1": "Value1X",
+          "newColumn2": "Value1Y"
+        },
+        {
+          "id": 2,
+          "name": "Another Dessert",
+          "calories": 400,
+          "fat": 7,
+          "carbs": 70,
+          "protein": 5,
+          "newColumn1": "Value2X",
+          "newColumn2": "Value2Y"
+        }
+      ]
+    }
+  ]
+}
