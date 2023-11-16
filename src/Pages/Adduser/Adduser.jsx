@@ -5,28 +5,39 @@ import { useNavigate } from 'react-router-dom';
 const Adduser = () => {
     const [userName, setUserName] = useState('');
     const [email, setEmail] = useState('');
-
     const [password, setPassword] = useState('');
     const [img, setImg] = useState('');
-
     const [accountType, setAccountType] = useState('');
+    const [error, setError] = useState('');
 
     const navigate = useNavigate();
     const db = firebase.firestore();
 
+    const accountTypeMap = {
+        'Nhân viên': 0,
+        'Xét duyệt': 1,
+        'Quản lý hồ sơ': 2,
+    };
+
     const handleAddUser = () => {
+        if (!userName || !email || !password || !img || !accountType) {
+            setError('Vui lòng điền đầy đủ thông tin');
+            return;
+        }
         const newUser = {
             userName: userName,
-            email:email,
+            email: email,
             password: password,
-            accountType: accountType,
-            img:img,
-            createdAt: new Date().getTime(),
+            accountType: accountTypeMap[accountType],
+            img: img,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
         };
 
         db.collection('users')
             .add(newUser)
             .then((docRef) => {
+                const formattedDate = new Date().toLocaleString(); // Format the current date
+
                 console.log("User added with ID: ", docRef.id);
                 navigate('/listuser');
             });
@@ -91,6 +102,7 @@ const Adduser = () => {
                         >
                             + Thêm
                         </button>
+
                     </div>
                 </div>
                 <div
@@ -172,7 +184,10 @@ const Adduser = () => {
                             <option>Quản lý hồ sơ</option>
                         </select>
                     </div>
+                {error && <p className="text-red-500">{error}</p>}
+
                 </div>
+
             </div>
         </div>
     );

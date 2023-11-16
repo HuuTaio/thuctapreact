@@ -4,45 +4,82 @@ import { useDispatch } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { updateUser } from '../reduxtool/userSlice';
 import firebase from '../firebase/firebase';
+function convertTimestampToDate(timestamp) {
+    const dateObj = new Date(timestamp);
+    return dateObj.toLocaleString(); // Adjust format as needed
+}
 
 const Edituser = () => {
     const { id } = useParams();
     const db = firebase.firestore();
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const [createdAt, setCreatedAt] = useState(null);
+    const [error, setError] = useState('');
 
     const [userName, setUserName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [img, setImg] = useState('');
     const [accountType, setAccountType] = useState('');
-
+const accountTypeMap = {
+        'Nhân viên': 0,
+        'Xét duyệt': 1,
+        'Quản lý hồ sơ': 2,
+    };
     useEffect(() => {
         db.collection('users')
             .doc(id)
             .get()
             .then(response => {
-                setUserName(response.data().userName);
-                setEmail(response.data().email);
-                setPassword(response.data().password);
-                setImg(response.data().img);
-                setAccountType(response.data().accountType);
+                const userData = response.data();
+                setUserName(userData.userName);
+                setEmail(userData.email);
+                setPassword(userData.password);
+                setImg(userData.img);
+                setAccountType(Object.keys(accountTypeMap).find(key => accountTypeMap[key] === userData.accountType));
+
+                // Chuyển đổi timestamp của Firestore thành đối tượng Date
+                setCreatedAt(userData.createdAt);
             });
     }, [id, db]);
 
     const handleUpdate = () => {
-        db.collection('users')
-            .doc(id)
-            .update({
-                userName,
-                email,
-                password,
-                img,
-                accountType
-            })
-            .then(() => navigate('/listuser'));
-    };
+        const updatedUserData = {
+            userName,
+            email,
+            password,
+            img,
+            accountType: accountTypeMap[accountType],
+            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
 
+        };
+    db.collection('users')
+            .doc(id)
+            .update(updatedUserData)
+            .then(() => navigate('/listuser'));
+    }; const handleAddUser = () => {
+        if (!userName || !email || !password || !img || !accountType) {
+            setError('Vui lòng điền đầy đủ thông tin');
+            return;
+        }
+        const newUser = {
+            userName: userName,
+            email: email,
+            password: password,
+            accountType: accountTypeMap[accountType],
+            img: img,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        };
+
+        db.collection('users')
+            .add(newUser)
+            .then((docRef) => {
+                console.log("User added with ID: ", docRef.id);
+                navigate('/listuser');
+            });
+    };
+    
     return (
         <div className="Hoso">
             <div className="text-4xl font-medium">Sửa user</div>
@@ -127,6 +164,20 @@ const Edituser = () => {
                 </div>
                 <div className="form-control w-full max-w-lg">
                     <label className="label">
+                        <span className="label-text font-medium">
+                            Email
+                        </span>
+                    </label>
+                    <input
+                        type="text"
+                        placeholder="Nhập Email..."
+                        className="input input-bordered w-full max-w-full bg-gray-100"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
+                <div className="form-control w-full max-w-lg">
+                    <label className="label">
                         <span className="label-text font-medium">Mật khẩu</span>
                     </label>
                     <input
@@ -135,6 +186,20 @@ const Edituser = () => {
                         className="input input-bordered w-full max-w-full bg-gray-100"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
+                <div className="form-control w-full max-w-lg">
+                    <label className="label">
+                        <span className="label-text font-medium">
+                            Hình
+                        </span>
+                    </label>
+                    <input
+                        type="text"
+                        placeholder="Nhập url hình..."
+                        className="input input-bordered w-full max-w-full bg-gray-100"
+                        value={img}
+                        onChange={(e) => setImg(e.target.value)}
                     />
                 </div>
                 <div className="form-control w-full max-w-lg">

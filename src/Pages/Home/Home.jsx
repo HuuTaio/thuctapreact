@@ -22,6 +22,7 @@ import Switch from '@mui/material/Switch';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
+import AuthWrapper from '../Login/AuthWrapper';
 
 function createData(id, name, calories, fat, carbs, protein) {
   return {
@@ -296,6 +297,8 @@ const Home = () => {
   );
     return (
         <div>
+    {/* <AuthWrapper/> */}
+
             <div className='Home'>
                 <div className='statistical'>
                     <div className='box_statistical'>
@@ -413,8 +416,11 @@ const Home = () => {
     </Box>
                 </div>
             </div>
+
         </div>
+
     );
+
 };
 
 export default Home;

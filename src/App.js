@@ -11,6 +11,7 @@ import Hoso from "./Pages/Hoso/Hoso";
 import Listuser from "./Pages/Listuser/Listuser";
 import Adduser from "./Pages/Adduser/Adduser";
 import Edituser from "./Pages/Edituser/Edituser";
+import Login from "./Pages/Login/login";
 function App() {
     return (
         <>
@@ -19,12 +20,14 @@ function App() {
                     <Route path="/" element={<Layout />}>
                         <Route index element={<Home />} />
                         <Route path="/hoso" element={<Hoso />} />
-                        <Route path="/listuser" element={<Listuser />} />
+                        <Route path="/listuser" element={<Listuser/>} />
                         <Route path="/adduser" element={<Adduser />} />
                         <Route path='/edituser/:id' element={<Edituser />} />
                         <Route path="*" element={<NoPage />} />
                         <Route path="/file" element={<File />} />
                     </Route>
+                    <Route path="/login" element={<Login />} />
+
                 </Routes>
             </BrowserRouter>
         </>
