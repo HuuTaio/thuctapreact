@@ -27,6 +27,32 @@ const accountTypeMap = {
         'Xét duyệt': 1,
         'Quản lý hồ sơ': 2,
     };
+    const [userCounts, setUserCounts] = useState({
+        totalUsers: 0,
+        employees: 0,
+        approvers: 0,
+        profileManagers: 0,
+    });
+    useEffect(() => {
+        // Hàm đếm số lượng người dùng theo từng loại
+        const countUsers = async () => {
+            const snapshot = await db.collection('users').get();
+            const totalUsers = snapshot.size;
+            const employees = snapshot.docs.filter(doc => doc.data().accountType === accountTypeMap['Nhân viên']).length;
+            const approvers = snapshot.docs.filter(doc => doc.data().accountType === accountTypeMap['Xét duyệt']).length;
+            const profileManagers = snapshot.docs.filter(doc => doc.data().accountType === accountTypeMap['Quản lý hồ sơ']).length;
+
+            setUserCounts({
+                totalUsers,
+                employees,
+                approvers,
+                profileManagers,
+            });
+        };
+
+        countUsers();
+    }, [db, accountTypeMap]);
+
     useEffect(() => {
         db.collection('users')
             .doc(id)
@@ -84,19 +110,19 @@ const accountTypeMap = {
         <div className="Hoso">
             <div className="text-4xl font-medium">Sửa user</div>
             <ul className="flex justify-start alignItem-center gap-14 font-medium cursor-pointer">
-                <li>
-                    <a>Danh sách người dùng (68)</a>
-                </li>
-                <li>
-                    <a>Nhân viên (22) </a>
-                </li>
-                <li>
-                    <a>Xét duyệt (12)</a>
-                </li>
-                <li>
-                    <a>Quản lý hồ sơ (17)</a>
-                </li>
-            </ul>
+                    <li>
+                        <a>Danh sách người dùng ({userCounts.totalUsers})</a>
+                    </li>
+                    <li>
+                        <a>Nhân viên ({userCounts.employees}) </a>
+                    </li>
+                    <li>
+                        <a>Xét duyệt ({userCounts.approvers})</a>
+                    </li>
+                    <li>
+                        <a>Quản lý hồ sơ ({userCounts.profileManagers})</a>
+                    </li>
+                </ul>
             <div className="flex justify-between items-center">
                 <div className="form-control py-4">
                     <div className="input-group">
