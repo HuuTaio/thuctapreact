@@ -1,0 +1,66 @@
+.AddProfile h1 {
+    font-size: 25px;
+    font-weight: 650;
+    /* color: #5D87FF; */
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    color: rgb(101 163 13);
+}
+
+.AddProfile .Utilities{
+    background-color: #fff;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+.AddProfile .Utilities .Marquee{
+    width: 80%;
+    padding: 5px 10px 0px 10px;
+    background-color: rgba(6, 6, 6, 0.549);
+    overflow: hidden;
+}
+
+.AddProfile .Utilities .Marquee marquee{
+    background-color: rgba(3, 3, 3, 0.566);
+    padding: 10px;
+    color: #fff;
+}
+.AddProfile .ButtonAdd{
+   position: absolute;
+   top: 50%;
+   right: 0px;
+   transform: translateY(-50%);
+   padding: 10px;
+   background-color: #fff;
+}
+.AddProfile .ButtonAdd button{
+    padding: 10px 30px;
+    background-color: #5D87FF;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: 600;
+    
+}
+.AddProfile .ProfileName{
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.AddProfile .ProfileName label{
+    font-size: 18px;
+    font-weight: 600;
+}
+.AddProfile .ProfileName input{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #5D87FF;
+    border-radius: 5px;
+}
+.Editor{
+    clear: both;
+    margin-top: 10px;
+}

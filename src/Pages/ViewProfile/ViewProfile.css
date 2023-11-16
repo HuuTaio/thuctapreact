@@ -1,0 +1,24 @@
+.ViewProfile{
+    background-color: #fff;
+    max-height: 75vh;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+}
+.ViewProfile h2{
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    border-bottom: 2px solid #ececec;
+    color: rgb(1, 165, 111);
+    background-color: rgba(255, 255, 255, 0.434);
+    text-transform: uppercase;
+
+}
+.ViewProfile .Content{
+    padding: 10px;
+    margin-top: 20px;
+    overflow: auto;
+    max-height: 60vh;
+}

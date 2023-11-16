@@ -1,5 +1,5 @@
 .Admin-container {
-    background-color: #e6e6e6;
+    background-color: #F2FDFF;
     /* background-image: url("https://wallpapers.com/images/hd/purple-light-in-galaxy-background-l39vbu2x2yed4jw6.jpg");
     background-size: 100%;
     background-attachment: fixed; */
@@ -9,7 +9,7 @@
   .Header_Admin {
     float: left;
     width: 18%;
-    z-index: 2;
+    z-index: 4;
   }
   
   .Site_Admin_Right {
@@ -22,7 +22,7 @@
   .TopBar_Admin {
     position: fixed;
     width: 82%;
-    z-index: 1;
+    z-index: 3;
   }
   
   .Noidungchinh_Admin {

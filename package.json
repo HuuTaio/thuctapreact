@@ -14,10 +14,14 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@tinymce/tinymce-react": "^4.3.0",
     "assert": "^2.1.0",
     "axios": "^1.6.0",
+    "firebase": "^10.6.0",
     "http-browserify": "^1.7.0",
     "https-browserify": "^1.0.0",
+    "mammoth": "^1.6.0",
+    "path-browserify": "^1.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.17.0",
@@ -33,7 +37,8 @@
       "http": "require.resolve('stream-http')",
       "https": "require.resolve('https-browserify')",
       "zlib": "require.resolve('browserify-zlib')",
-      "stream": "require.resolve('stream-browserify')"
+      "stream": "require.resolve('stream-browserify')",
+      "path": false
     }
   },
   "scripts": {

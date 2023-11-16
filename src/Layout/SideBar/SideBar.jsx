@@ -91,7 +91,7 @@ const SideBar = () => {
                                         {isHoSoSubMenuOpen && (
                                             <div className="single_Menu_1">
                                                 <div className="mini_Menu">
-                                                <NavLink to="/list-course" activeclassname="active" className="link_SideBar">
+                                                <NavLink to="/hoso" activeclassname="active" className="link_SideBar">
                                                     
                                                     <div className="icon-menu">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" className="custom-svg">

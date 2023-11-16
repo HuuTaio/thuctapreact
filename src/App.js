@@ -9,6 +9,9 @@ import File from "./Pages/File/File";
 import Home from "./Pages/Home/Home";
 import Hoso from "./Pages/Hoso/Hoso";
 import Listuser from "./Pages/Listuser/Listuser";
+import AddProfile from "./Pages/Add_Profile/Add_Profile";
+import ViewProfile from "./Pages/ViewProfile/ViewProfile";
+import EditProfile from "./Pages/EditProfile/EditProfile";
 function App() {
     return (
         <>
@@ -18,8 +21,11 @@ function App() {
                         <Route index element={<Home />} />
                         <Route path="/hoso" element={<Hoso />} />
                         <Route path="/danhsachuser" element={<Listuser />} />
+                        <Route path="/add-profile" element={<AddProfile />} />
                         <Route path="*" element={<NoPage />} />
                         <Route path="/file" element={<File />} />
+                        <Route path="/view-profile" element={<ViewProfile />} />
+                        <Route path="/edit-profile/:id" element={<EditProfile/>} />
                     </Route>
                 </Routes>
             </BrowserRouter>
