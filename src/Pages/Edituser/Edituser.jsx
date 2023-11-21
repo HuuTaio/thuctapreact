@@ -83,7 +83,10 @@ const accountTypeMap = {
     db.collection('users')
             .doc(id)
             .update(updatedUserData)
-            .then(() => navigate('/listuser'));
+            .then(() => {
+                alert("Đã xóa user thành công")
+            
+            navigate('/listuser')});
     }; const handleAddUser = () => {
         if (!userName || !email || !password || !img || !accountType) {
             setError('Vui lòng điền đầy đủ thông tin');

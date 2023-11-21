@@ -62,7 +62,7 @@ const Adduser = () => {
             .add(newUser)
             .then((docRef) => {
                 const formattedDate = new Date().toLocaleString(); // Format the current date
-
+                alert("Đã thêm user thành công")
                 console.log("User added with ID: ", docRef.id);
                 navigate('/listuser');
             });
